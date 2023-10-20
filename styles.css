@@ -1,0 +1,141 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222327;
+}
+
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 70px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper ul {
+  display: flex;
+  width: 350px;
+}
+
+.wrapper ul li {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.wrapper ul li a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+}
+
+.wrapper ul li a i {
+  position: relative;
+  display: block;
+  line-height: 70px;
+  font-size: 1.5em;
+  color: #222327;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.wrapper ul li a:hover i {
+  text-shadow: 3px 5px 15px;
+}
+
+.wrapper ul li.active a i {
+  transform: translateY(-35px);
+  color: #fff;
+}
+
+.wrapper ul li a span {
+  position: absolute;
+  color: #222327;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.wrapper ul li.active a span {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.wrapper ul .indicator {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #4070f4;
+  border-radius: 50%;
+  top: -50%;
+  border: 6px solid #222327;
+  transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper ul .indicator::before,
+.wrapper ul .indicator::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  background: transparent;
+}
+
+.wrapper ul .indicator::before {
+  left: -22px;
+  border-top-right-radius: 20px;
+  box-shadow: 1px -10px 0 0 #222327;
+}
+
+.wrapper ul .indicator::after {
+  right: -22px;
+  border-top-left-radius: 20px;
+  box-shadow: -1px -10px 0 0 #222327;
+}
+
+.wrapper ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.wrapper ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.wrapper ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+
+.wrapper ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(70px * 3));
+}
+
+.wrapper ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(70px * 4));
+}
